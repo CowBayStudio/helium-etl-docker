@@ -26,4 +26,4 @@ jobs:
           push: true
           tags: |
             quay.io/cowbay/helium-etl:latest
-            quay.io/cowbay/helium-etl:${{ github.ref }}
+            quay.io/cowbay/helium-etl:${{ github.base_ref }}
