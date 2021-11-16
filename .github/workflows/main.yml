@@ -24,4 +24,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: helium-etl:latest
+          tags: |
+            quay.io/cowbay/helium-etl:latest
+            quay.io/cowbay/helium-etl:${{GITHUB_REF_NAME}}
