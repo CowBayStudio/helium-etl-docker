@@ -14,6 +14,10 @@ jobs:
       - 
         name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
+      -
+        name: Check latestver
+        id: lv
+        run: ./latestver.sh
       - 
         name: Set tag var
         id: vars
