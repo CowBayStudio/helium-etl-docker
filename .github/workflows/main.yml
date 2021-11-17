@@ -32,6 +32,8 @@ jobs:
           no-cache: true
           push: true
           context: .
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_TOKEN }}
           file: Dockerfile
           tags: |
             quay.io/cowbay/helium-etl:latest
