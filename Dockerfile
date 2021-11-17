@@ -15,8 +15,8 @@ ENV CC=gcc CXX=g++ CFLAGS="-U__sun__" \
     PATH="/root/.cargo/bin:$PATH" \
     RUSTFLAGS="-C target-feature=-crt-static"
 
-ADD latest_tag.sh /bin/
-RUN /bin/latest_tag.sh
+ADD download_latest.sh /bin/
+RUN /bin/download_latest.sh
 
 RUN rebar3 as docker_etl tar
 RUN mkdir -p /opt/docker
