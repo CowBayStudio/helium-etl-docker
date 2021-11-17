@@ -29,7 +29,7 @@ jobs:
           no-cache: true
           push: true
           context: .
-          file: ./Dockerfile
+          file: Dockerfile
           tags: |
             quay.io/cowbay/helium-etl:latest
             quay.io/cowbay/helium-etl:${{ env.GITHUB_REF_SLUG }}
