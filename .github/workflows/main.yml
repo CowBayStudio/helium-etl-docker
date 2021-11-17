@@ -33,13 +33,7 @@ jobs:
           push: false
           context: .
           file: Dockerfile
-          tags: helium-etl:latest
-      - # copy multiplatform image from dockerhub to quay and ghcr
-        name: Push Image to multiple registries
-        uses: akhilerm/tag-push-action@v2.0.0
-        with:
-          src: helium-etl:latest
-          dst: |
+          tags: |
             quay.io/cowbay/helium-etl:latest
             quay.io/cowbay/helium-etl:${{ env.GITHUB_REF_SLUG }}
             quay.io/cowbay/helium-etl:${{ github.sha }}
