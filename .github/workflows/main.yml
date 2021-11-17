@@ -39,5 +39,5 @@ jobs:
           file: Dockerfile
           tags: |
             quay.io/cowbay/helium-etl:latest
-            quay.io/cowbay/helium-etl:${{ env.version }}
+            quay.io/cowbay/helium-etl:${{ steps.vars.output.version }}
             quay.io/cowbay/helium-etl:${{ github.sha }}
