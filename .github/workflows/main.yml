@@ -8,6 +8,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
       - 
         name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
@@ -29,6 +32,7 @@ jobs:
           no-cache: true
           push: true
           context: .
+          file: Dockerfile
           tags: |
             quay.io/cowbay/helium-etl:latest
             quay.io/cowbay/helium-etl:${{ env.GITHUB_REF_SLUG }}
